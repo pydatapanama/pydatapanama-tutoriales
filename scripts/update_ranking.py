@@ -1,5 +1,6 @@
 import os
 import collections
+import json
 
 # 📌 Points configuration
 POINTS_CREATION = 20
@@ -11,6 +12,9 @@ ranking = collections.defaultdict(int)
 
 # 📌 Directories where tutorials are stored
 CATEGORIES = ["01_Numpy", "02_Pandas", "03_Matplotlib", "04_Seaborn"]
+
+# 📌 Get the GitHub actor (user who made the PR)
+GITHUB_ACTOR = os.getenv('GITHUB_ACTOR', '').strip()  # This gets the PR author's GitHub username
 
 # 📌 Read current ranking if it exists
 ranking_current = {}
@@ -43,12 +47,13 @@ for category in CATEGORIES:
                     # Ensure valid GitHub username (alphanumeric + hyphens)
                     if user.replace("-", "").isalnum():
                         print(f"✅ DEBUG: Valid tutorial '{tutorial}' detected with user '{user}'")
-                        
-                        # Check if it's a new tutorial (not in ranking)
-                        if user not in ranking_current:
-                            ranking[user] += POINTS_CREATION
-                        else:
-                            ranking[user] += POINTS_CORRECTION  # Existing tutorial, assume modification
+
+                        # Only assign points if the user is the PR author
+                        if user == GITHUB_ACTOR:
+                            if user not in ranking_current:
+                                ranking[user] += POINTS_CREATION
+                            else:
+                                ranking[user] += POINTS_CORRECTION  # Existing tutorial, assume modification
 
 # 📌 Merge new points with existing ranking
 for user, points in ranking_current.items():
@@ -65,4 +70,4 @@ with open(RANKING_FILE, "w") as f:
         f.write(f"| {user} | {points} |\n")
     f.write("\n🚀 **Keep contributing to climb up the ranking!**\n")
 
-print("✅ Ranking successfully updated.")
+print(f"✅ Ranking successfully updated. User {GITHUB_ACTOR} received points.")
