@@ -8,6 +8,7 @@ Este repositorio está diseñado para facilitar el aprendizaje de herramientas e
 
 ## 🎯 **Objetivo del repositorio**
 El propósito de este repositorio es:
+
 ✅ Centralizar material educativo en español sobre análisis de datos en Python.  
 ✅ Permitir que cualquier miembro de la comunidad pueda **crear y compartir tutoriales**.  
 ✅ Fomentar el aprendizaje colaborativo y la práctica con código real.  
@@ -50,19 +51,25 @@ Dirígete a la carpeta de la herramienta sobre la que quieres crear un tutorial:
 - **Matplotlib** → `cd 03_Matplotlib`
 - **Seaborn** → `cd 04_Seaborn`
 
-### 3️⃣ **Copia el template del tutorial**
+### 3️⃣ **Crea un nuevo branch con tu usuario**
+💡 *Es mejor hacer esto antes de modificar archivos para trabajar en una rama aislada.*  
+```bash
+git checkout -b tutorial-{herramienta}-{tu_usuario}
+```
+
+### 4️⃣ **Copia el template del tutorial**
 Cada carpeta contiene un `template` que puedes usar para estructurar tu tutorial. Copia el template y cambia `{nombre_breve_del_tutorial}` y `{tu_usuario}` por valores personalizados:
 
 ```bash
 cp -r template-{herramienta} {nombre_breve_del_tutorial}-{tu_usuario}
 ```
 
-Ejemplo para un tutorial sobre gráficos en Matplotlib:
+📌 **Ejemplo real para Matplotlib:**
 ```bash
 cp -r template-matplotlib graficos-basicos-jasonssdev
 ```
 
-### 4️⃣ **Crea tu tutorial**
+### 5️⃣ **Crea tu tutorial**
 Modifica los archivos dentro de la carpeta que copiaste:
 - **README.md**: Explica el contenido de tu tutorial.
 - **notebooks/**: Contiene el notebook de Jupyter con ejemplos y explicaciones.
@@ -70,19 +77,18 @@ Modifica los archivos dentro de la carpeta que copiaste:
 - **src/**: Código auxiliar o funciones personalizadas.
 - **tests/**: Pruebas unitarias (si aplican).
 
-### 5️⃣ **Agrega y commitea tus cambios**
+### 6️⃣ **Agrega y commitea tus cambios**
 ```bash
 git add .
 git commit -m "Añadiendo tutorial sobre {tema} en {herramienta}"
 ```
 
-### 6️⃣ **Crea un nuevo branch y sube tu tutorial**
+### 7️⃣ **Sube tu branch a GitHub**
 ```bash
-git checkout -b tutorial-{herramienta}-{tu_usuario}
 git push origin tutorial-{herramienta}-{tu_usuario}
 ```
 
-### 7️⃣ **Envía un Pull Request (PR)**
+### 8️⃣ **Envía un Pull Request (PR)**
 Ve a **GitHub** y crea un **Pull Request** para que revisemos tu tutorial y lo integremos al repositorio.
 
 ---
