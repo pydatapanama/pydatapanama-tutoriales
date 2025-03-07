@@ -93,4 +93,4 @@ with open(RANKING_FILE, "w") as f:
         f.write(f"| {user} | {points} |\n")
     f.write("\n🚀 **Keep contributing to climb up the ranking!**\n")
 
-print("✅ Ranking successfully updated.")
+print(" ✅ Ranking successfully updated.")
