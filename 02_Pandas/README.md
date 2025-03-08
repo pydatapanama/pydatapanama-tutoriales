@@ -5,10 +5,10 @@ Bienvenido a **template-pandas**, un repositorio diseñado para que los miembros
 📌 **Objetivo:** Crear una colección de tutoriales sobre Pandas que sean accesibles para cualquier persona interesada en el análisis de datos y la programación en Python.
 
 📌 **¿Cómo funciona?**
-1. **Clona este repositorio como base para tu tutorial**.
+1. **Haz un [Fork](https://github.com/pydatapanama/pydatapanama-tutoriales/fork) del repositorio y trabaja en tu propia copia**.
 2. **Sigue la estructura estándar del tutorial**.
 3. **Crea tu tutorial y complementa con ejemplos prácticos**.
-4. **Lo que está entre {} es para que puedas cambiarlo acorde a tu tutorial**.
+4. **Asegúrate de usar el formato correcto para que el sistema de ranking lo reconozca**.
 5. **Envía un Pull Request (PR) con tu tutorial para ser revisado e integrado en la comunidad**.
 
 ---
@@ -42,49 +42,48 @@ Al contribuir con un tutorial aquí, puedes abordar temas como:
 
 ---
 
-## 🔹 ¿Cómo clonar el repositorio y empezar?
+# 🤝 **Cómo contribuir con un tutorial (Fork + Pull Request)**
+📒 Sigue estos pasos para contribuir con un nuevo tutorial:
 
-Para contribuir con tu tutorial, sigue estos pasos:
+### 1️⃣ **Haz un Fork del repositorio**
+Entra al repositorio en GitHub y presiona el botón [Fork](https://github.com/pydatapanama/pydatapanama-tutoriales/fork) en la esquina superior derecha.
 
-### 1️⃣ Clona el repositorio
-Abre tu terminal y ejecuta:
+### 2️⃣ **Clona tu Fork en tu máquina local**
 ```bash
-git clone git@github.com:pydatapanama/pydatapanama-tutoriales.git
-cd 02_Pandas
-cp -r pydatapanama-tutoriales/02_Pandas/template-pandas pydatapanama-tutoriales/02_Pandas/{nombre_breve_del_tutorial}-{nombre_usuario_github}
+git clone https://github.com/tu-usuario/pydatapanama-tutoriales.git
+cd pydatapanama-tutoriales
 ```
 
-### 📌 Ejemplo real: Si el tutorial es sobre “dataframes-básicos” y tu nombre de usuario de Github es jasonssdev:
+### 3️⃣ **Crea una nueva rama con tu usuario**
 ```bash
-cp -r pydatapanama-tutoriales/02_Pandas/template-pandas pydatapanama-tutoriales/02_Pandas/dataframes-basicos-jasonssdev
+git checkout -b tutorial-pandas-tu_usuario
 ```
 
-### 2️⃣ Crea un nuevo branch con tu nombre de usuario
+### 4️⃣ **Copia el template y nómbralo correctamente**
 ```bash
-git checkout -b {tutorial-pandas-tu_usuario}
+cp -r 02_Pandas/template-pandas 02_Pandas/{nombre_breve_del_tutorial}-{tu_usuario}
+```
+📌 **Ejemplo:**
+```bash
+cp -r 02_Pandas/template-pandas 02_Pandas/dataframes-basicos-jasonssdev
 ```
 
-### 3️⃣ Agrega tu tutorial respetando la estructura del repositorio
+### 5️⃣ **Crea y edita tu tutorial respetando la estructura**
 📌 **README.md:** Explicación del contenido del tutorial.
 📌 **notebooks/**: Contiene notebooks de Jupyter con código y explicaciones.
 📌 **data/**: Contiene datasets (si el tutorial requiere datos para análisis).
 📌 **src/**: Código fuente auxiliar (funciones, scripts).
 📌 **tests/**: Pruebas unitarias (si aplica).
 
-Ejemplo de nombre de archivo:
-```plaintext
-notebooks/tutorial_pandas_basico.ipynb
-```
-
-### 4️⃣ Agrega y commitea tus cambios
+### 6️⃣ **Agrega y commitea tus cambios**
 ```bash
 git add .
-git commit -m {"Añadiendo tutorial sobre manipulación de DataFrames en Pandas"}
+git commit -m "Añadiendo tutorial sobre manipulación de DataFrames en Pandas"
 ```
 
-### 5️⃣ Sube tu branch y envía un Pull Request
+### 7️⃣ **Sube tu rama y envía un Pull Request**
 ```bash
-git push origin {tutorial-pandas-tu_usuario}
+git push origin tutorial-pandas-tu_usuario
 ```
 Luego, **ve a GitHub y crea un Pull Request** para que revisemos tu tutorial y lo integremos en el repositorio principal. 🚀
 

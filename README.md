@@ -9,11 +9,11 @@ Este repositorio está diseñado para facilitar el aprendizaje de herramientas e
 ## 🎯 **Objetivo del repositorio**
 El propósito de este repositorio es:
 
-👉 Centralizar material educativo en español sobre análisis de datos en Python.  
-👉 Permitir que cualquier miembro de la comunidad pueda **crear y compartir tutoriales**.  
-👉 Fomentar el aprendizaje colaborativo y la práctica con código real.  
-👉 Servir como base de conocimiento para cualquier persona interesada en la ciencia de datos.  
-👉 **Incentivar a los contribuidores con un sistema de ranking automático.**  
+🔎 Centralizar material educativo en español sobre análisis de datos en Python.  
+💼 Permitir que cualquier miembro de la comunidad pueda **crear y compartir tutoriales**.  
+💡 Fomentar el aprendizaje colaborativo y la práctica con código real.  
+📖 Servir como base de conocimiento para cualquier persona interesada en la ciencia de datos.  
+🏆 **Incentivar a los contribuidores con un sistema de ranking automático.**  
 
 📌 **Todos los tutoriales siguen un mismo formato**, lo que permite que sean fáciles de seguir y estructurados de manera uniforme.
 
@@ -58,59 +58,72 @@ Para que GitHub Actions detecte y asigne puntos correctamente, cada tutorial **d
 {nombre-breve-del-tutorial}-{usuario-github}
 ```
 
-👉 **Ejemplos válidos:**  
-👉 `01_Numpy/arrays-basicos-jasonssdev/`  
-👉 `02_Pandas/dataframes-introduccion-maria123/`  
-👉 `03_Matplotlib/graficos-avanzados-carlosdev/`  
+🔎 **Ejemplos válidos:**  
+📅 `01_Numpy/arrays-basicos-jasonssdev/`  
+📅 `02_Pandas/dataframes-introduccion-maria123/`  
+📅 `03_Matplotlib/graficos-avanzados-carlosdev/`  
 
-🔴 **Ejemplos inválidos:**  
-🛑 `01_Numpy/mi_tutorial/` (**No tiene el usuario de GitHub**)  
-🛑 `02_Pandas/tutorial_pandas/` (**No sigue el formato requerido**)  
+🛑 **Ejemplos inválidos:**  
+🛠️ `01_Numpy/mi_tutorial/` (**No tiene el usuario de GitHub**)  
+🛠️ `02_Pandas/tutorial_pandas/` (**No sigue el formato requerido**)  
 
 📌 **Si no sigues este formato, tu contribución no será reconocida en el ranking.**
 
 ---
 
-## 🤝 **Cómo contribuir con un tutorial**
-👉 Sigue estos pasos para contribuir con un nuevo tutorial:
+## 🤝 **Cómo contribuir con un tutorial (Fork + Pull Request)**
+📒 Sigue estos pasos para contribuir con un nuevo tutorial:
 
-### 1️⃣ **Clona el repositorio**
+### 1️⃣ **Haz un Fork del repositorio**
+Entra al repositorio en GitHub y presiona el botón [Fork](https://github.com/pydatapanama/pydatapanama-tutoriales/fork) en la esquina superior derecha o hacienco click en [Fork](https://github.com/pydatapanama/pydatapanama-tutoriales/fork).
+
+### 2️⃣ **Clona tu Fork en tu máquina local**
 ```bash
-git clone git@github.com:pydatapanama/pydatapanama-tutoriales.git
+git clone https://github.com/tu-usuario/pydatapanama-tutoriales.git
 cd pydatapanama-tutoriales
 ```
 
-### 2️⃣ **Elige una categoría**
-Dirígete a la carpeta de la herramienta sobre la que quieres crear un tutorial:
-- **NumPy** → `cd 01_Numpy`
-- **Pandas** → `cd 02_Pandas`
-- **Matplotlib** → `cd 03_Matplotlib`
-- **Seaborn** → `cd 04_Seaborn`
+### 3️⃣ **Configura el repositorio remoto principal**
+Para mantener tu Fork actualizado, agrega el repositorio original como `upstream`:
+```bash
+git remote add upstream https://github.com/pydatapanama/pydatapanama-tutoriales.git
+git fetch upstream
+git merge upstream/main
+```
 
-### 3️⃣ **Crea un nuevo branch con tu usuario**
+### 4️⃣ **Crea una nueva rama para tu tutorial**
 ```bash
 git checkout -b tutorial-{herramienta}-{tu_usuario}
 ```
 
-### 4️⃣ **Copia el template del tutorial**
+### 5️⃣ **Copia el template del tutorial**
 ```bash
 cp -r template-{herramienta} {nombre_breve_del_tutorial}-{tu_usuario}
 ```
 
-### 5️⃣ **Crea tu tutorial**
-Edita los archivos en la carpeta que copiaste:
+### 6️⃣ **Edita tu tutorial**
+Modifica los archivos en la carpeta que creaste:
 - **README.md**: Explicación del tutorial.
 - **notebooks/**: Notebooks de Jupyter.
 - **data/**: Datos usados en el tutorial.
 - **src/**: Código auxiliar.
 - **tests/**: Pruebas unitarias.
 
-### 6️⃣ **Sube tu branch y haz un Pull Request**
+### 7️⃣ **Guarda y sube los cambios a tu Fork**
 ```bash
 git add .
-git commit -m "📝 Añadiendo tutorial sobre {tema}"
+git commit -m "📚 Añadiendo tutorial sobre {tema}"
 git push origin tutorial-{herramienta}-{tu_usuario}
 ```
+
+### 8️⃣ **Crea un Pull Request hacia el repositorio original**
+1. Ve a tu Fork en GitHub.
+2. Presiona "Compare & pull request".
+3. Asegúrate de que la base es `main` del repositorio original.
+4. Describe tu contribución y envía el Pull Request.
+
+### 9️⃣ **Espera revisión y Merge**
+Los administradores revisarán tu PR y si cumple con los requisitos, lo integrarán al repositorio.
 
 ---
 
